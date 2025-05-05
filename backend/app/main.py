@@ -14,15 +14,11 @@ app = FastAPI()
 # Configuration CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Autorise toutes les origines
+    allow_origins=["*"], 
     allow_credentials=True,
-    allow_methods=["*"], # Autorise toutes les méthodes HTTP
-    allow_headers=["*"], # Autorise tous les en-têtes
+    allow_methods=["*"], 
+    allow_headers=["*"], 
 )
-
-# Configuration de la base de données MySQL en utilisant les variables d'environnement
-# DATABASE_URL = "mysql+mysqlconnector://tsinjo:nantosoa@localhost/tsinjo"
-# Utilisation des variables d'environnement pour la configuration de la base de données
 DB_USER = os.getenv("DB_USER", "tsinjo")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "nantosoa")
 DB_HOST = os.getenv("DB_HOST", "localhost")
